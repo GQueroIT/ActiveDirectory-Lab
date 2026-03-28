@@ -43,6 +43,7 @@ The lab is broken down step-by-step to simulate a real-world deployment process:
 - [Step 10 - Final AD Validation](./documents/10-final-ad-validation.md)
 - [Step 11 - Windows Client Installation](./documents/11-windows-client-installation.md)
 - [Step 12 - Domain Users and Security Groups](./documents/12-domain-users-and-groups.md)
+- [Step 13 - Domain Join and Client Validation](./documents/13-domain-join-and-client-validation.md)
 
 ---
 

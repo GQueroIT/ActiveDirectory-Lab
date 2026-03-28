@@ -1,0 +1,15 @@
+Step 13 - Domain Join and Client Validation
+
+Configured CLIENT01 with a static IP on the internal lab network.
+Set CLIENT01 DNS to 192.168.56.10.
+Verified connectivity to DC01 with ping and nslookup.
+Joined CLIENT01 to relentixtest.local.
+Restarted the client after domain join.
+Logged into CLIENT01 using a domain user account.
+Verified CLIENT01 domain membership from System Properties.
+Confirmed CLIENT01 appeared in Active Directory.
+Moved CLIENT01 into the Workstations OU.
+Validated the computer object with PowerShell on DC01.
+
+Screenshots saved under:
+screenshots/step-13
