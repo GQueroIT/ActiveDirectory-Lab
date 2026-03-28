@@ -1,314 +1,145 @@
-\# Troubleshooting - Network Connectivity Issue (DC01 and CLIENT01)
-
-
+# Network Connectivity Issue (DC01 and CLIENT01)
 
 ---
 
+## Objective
 
-
-\## Issue
-
-
-
-During Step 13, CLIENT01 was unable to communicate with DC01 across the internal lab network.
-
-
-
-This prevented normal validation and blocked domain join progress until the connectivity issue was isolated and corrected.
-
-
+In this scenario, I identified and resolved a network communication issue between DC01 and CLIENT01 that prevented domain join validation during Step 13.
 
 ---
 
+## Environment
 
-
-\## Symptoms
-
-
-
-The following problems were observed:
-
-
-
-\- Ping requests between DC01 and CLIENT01 failed
-
-\- CLIENT01 appeared correctly configured at first glance
-
-\- DC01 was not using the intended static address
-
-\- Communication only succeeded after firewall rules were adjusted
-
-
+- Hypervisor: VirtualBox  
+- Domain Controller: DC01  
+- Client Machine: CLIENT01  
+- Internal Network: 192.168.56.0/24  
+- Expected DC IP: 192.168.56.10  
+- Expected Client IP: 192.168.56.20  
 
 ---
 
+## Issue
 
+CLIENT01 was unable to communicate with DC01 across the internal lab network.
 
-\## Environment
-
-
-
-\- Hypervisor: VirtualBox
-
-\- Domain Controller: DC01
-
-\- Client Machine: CLIENT01
-
-\- Internal Lab Network: 192.168.56.0/24
-
-\- Expected DC IP: 192.168.56.10
-
-\- Expected Client IP: 192.168.56.20
-
-
+This prevented domain join validation and indicated a breakdown in internal network connectivity.
 
 ---
 
+## Symptoms
 
-
-\## Root Causes Identified
-
-
-
-\### 1. DC01 was not using the correct static IP
-
-
-
-The domain controller was found using the wrong address instead of the intended static configuration.
-
-
-
-This created instability during client-to-server validation.
-
-
+- Ping requests between DC01 and CLIENT01 failed  
+- CLIENT01 appeared correctly configured at first glance  
+- DC01 was not using the intended static IP  
+- Communication only succeeded after firewall rules were adjusted  
 
 ---
 
+## Root Cause Analysis
 
+### 1. Incorrect IP Configuration on DC01
 
-\### 2. Multiple network adapters created confusion during testing
+DC01 was using a dynamically assigned IP address instead of the required static configuration.
 
-
-
-The environment used both:
-
-\- NAT
-
-\- Host-only Adapter
-
-
-
-This required careful confirmation that testing was occurring across the correct internal adapter.
-
-
+This created inconsistency in communication and DNS resolution.
 
 ---
 
+### 2. Multiple Active Network Adapters
 
+Both NAT and Host-only adapters were active simultaneously.
 
-\### 3. Windows Firewall blocked connectivity validation
-
-
-
-Even after correcting the network configuration, ping traffic was still blocked until the firewall was disabled for testing.
-
-
+This introduced ambiguity in routing and made troubleshooting more difficult.
 
 ---
 
+### 3. Windows Firewall Blocking ICMP Traffic
 
-
-\## Resolution Steps
-
-
-
-\### Step 1 - Verify VirtualBox adapter alignment
-
-
-
-Both VMs were reviewed to confirm that Adapter 2 was attached to:
-
-
-
-\- Host-only Adapter
-
-\- VirtualBox Host-Only Ethernet Adapter
-
-
-
-This ensured both systems were placed on the same internal network.
-
-
+Even after correcting the network configuration, ICMP (ping) traffic was blocked due to default Windows Firewall settings.
 
 ---
 
+## Resolution
 
+### Step 1 - Align VirtualBox Network Adapters
 
-\### Step 2 - Correct DC01 IP configuration
+Both machines were verified to use:
 
-
-
-DC01 was reconfigured to use the proper static settings:
-
-
-
-\- IP Address: 192.168.56.10
-
-\- Subnet Mask: 255.255.255.0
-
-\- Default Gateway: left blank
-
-\- DNS Server: 192.168.56.10
-
-
+- Host-only Adapter  
+- VirtualBox Host-Only Ethernet Adapter  
 
 ---
 
+### Step 2 - Configure Static IP on DC01
 
-
-\### Step 3 - Confirm CLIENT01 IP configuration
-
-
-
-CLIENT01 was confirmed to be using:
-
-
-
-\- IP Address: 192.168.56.20
-
-\- Subnet Mask: 255.255.255.0
-
-\- Default Gateway: left blank
-
-\- DNS Server: 192.168.56.10
-
-
+IP Address: 192.168.56.10  
+Subnet Mask: 255.255.255.0  
+Default Gateway: (blank)  
+DNS Server: 192.168.56.10  
 
 ---
 
+### Step 3 - Verify CLIENT01 Configuration
 
-
-\### Step 4 - Test communication again
-
-
-
-Connectivity tests were repeated using:
-
-
-
-```cmd
-
-ping 192.168.56.10
-
-ping 192.168.56.20
-
-```
-
-
-
-At this point, communication was still blocked.
-
-
+IP Address: 192.168.56.20  
+Subnet Mask: 255.255.255.0  
+Default Gateway: (blank)  
+DNS Server: 192.168.56.10  
 
 ---
 
+### Step 4 - Test Connectivity
 
+Run the following commands from both machines:
 
-\### Step 5 - Disable firewall for testing
+ping 192.168.56.10  
+ping 192.168.56.20  
 
-
-
-Firewall was temporarily disabled to verify whether Windows filtering was blocking ICMP traffic.
-
-
-
-Example command used:
-
-
-
-```powershell
-
-netsh advfirewall set allprofiles state off
-
-```
-
-
-
-After this change, connectivity succeeded and validation could continue.
-
-
+Initial tests failed, confirming a communication issue.
 
 ---
 
+### Step 5 - Disable Firewall for Validation
 
+Run on DC01:
 
-\## Result
+netsh advfirewall set allprofiles state off  
 
-
-
-After correcting the DC configuration and temporarily disabling firewall protection for testing, communication between DC01 and CLIENT01 was restored successfully.
-
-
-
-This confirmed that the issue was not caused by VirtualBox after final adapter alignment, but by a combination of:
-
-
-
-\- incorrect DC IP configuration
-
-\- multi-adapter confusion during validation
-
-\- Windows Firewall behavior
-
-
+After disabling the firewall, connectivity was successfully established.
 
 ---
 
+## Validation
 
+- Successful ping responses between DC01 and CLIENT01  
+- Stable communication across the internal network  
+- Environment ready for domain join  
 
-\## Evidence
+---
 
+## Evidence
 
+Screenshots for this issue are located in:
 
-Screenshots for this troubleshooting case are stored in:
-
-
-
-`screenshots/troubleshooting/`
-
-
+screenshots/troubleshooting/
 
 Included evidence:
 
-
-
-\- CLIENT01 IP Config Correct
-
-\- Communication Fix after Firewall Disable
-
-\- DC IP Config Corrected
-
-\- DC IP Config Wrong
-
-\- DC Ping Fail
-
-
+- CLIENT01 IP Configuration (Correct)  
+- DC01 IP Configuration (Incorrect)  
+- DC01 IP Configuration (Corrected)  
+- Failed Ping Test  
+- Successful Communication After Firewall Adjustment  
 
 ---
 
+## Key Takeaways
 
+- Domain Controllers must use a static IP and self-referenced DNS  
+- VirtualBox adapter alignment is critical in lab environments  
+- Multiple adapters can create routing confusion  
+- Windows Firewall can block valid internal traffic  
+- Connectivity must always be validated before domain operations  
 
-\## Key Takeaways
-
-
-
-\- Active Directory labs depend on the domain controller having the correct static IP
-
-\- The client and server must use the same internal VirtualBox network
-
-\- NAT and Host-only adapters can cause confusion if the wrong adapter is inspected
-
-\- Windows Firewall can block ping even when network configuration is otherwise correct
-
-\- Troubleshooting should confirm configuration, isolate variables, and retest after each change
-
+---

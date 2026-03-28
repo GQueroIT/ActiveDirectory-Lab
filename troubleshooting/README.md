@@ -1,54 +1,40 @@
-\# Troubleshooting
+# Troubleshooting (Issue Resolution Log)
 
-
-
-This folder documents issues encountered during the Active Directory lab and the steps used to resolve them.
-
-
+Documentation of issues encountered during the Active Directory lab and the steps taken to identify, isolate, and resolve them.
 
 ---
 
+## Objective
 
+The purpose of this section is to demonstrate real-world troubleshooting methodology, including root cause analysis, validation, and resolution.
 
-\## Cases
-
-
-
-\- \[Network Connectivity Issue (DC01 and CLIENT01)](./network-connectivity-issue.md)
-
-
+Each case reflects practical problem-solving during the lab build process.
 
 ---
 
+## Cases
 
+The following troubleshooting scenarios have been documented:
 
-\## Related Evidence
+- [Network Connectivity Issue (DC01 and CLIENT01)](./network-connectivity-issue.md)
 
+---
 
+## Evidence
 
-Troubleshooting screenshots are stored in:
-
-
+All related troubleshooting screenshots are stored in:
 
 `screenshots/troubleshooting/`
 
-
-
 ---
 
+## Purpose
 
+This section highlights:
 
-\## Purpose
+- real-world troubleshooting workflow  
+- root cause identification and validation  
+- structured documentation of issues and fixes  
+- ability to diagnose and resolve infrastructure problems  
 
-
-
-This section serves as:
-
-
-
-\- proof of troubleshooting ability
-
-\- documentation of root cause analysis
-
-\- a reference for future lab rebuilds
-
+---
