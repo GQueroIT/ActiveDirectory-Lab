@@ -11,4 +11,7 @@
 - Workstations
 
 ## Notes
-These OUs were created early in the lab so administrative accounts, systems, and future domain objects can be organized cleanly.
+- These OUs were created early in the lab to organize administrative accounts, systems, and future domain objects.
+- The gquero administrative account is placed in the IT OU.
+- This structure supports clean role-based management as the lab expands.
+
