@@ -24,7 +24,7 @@ The following troubleshooting scenarios have been documented:
 
 All related troubleshooting screenshots are stored in:
 
-`screenshots/troubleshooting/`
+`screenshots/troubleshooting/connectivity-issue/`
 
 ---
 
