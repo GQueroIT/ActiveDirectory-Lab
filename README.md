@@ -23,6 +23,7 @@ The following sections highlight the core components of this lab:
 - [Full Lab Documentation](#documentation)
 - [Configuration Files](#configuration)
 - [Evidence and Logs](#evidence)
+- [Troubleshooting](./troubleshooting/README.md)
 
 ---
 
@@ -64,6 +65,12 @@ All work is supported with screenshots and logs:
 - Screenshots: `./screenshots/`
 - Step 10 Validation Log: `./logs/step-10-ad-validation.txt`
 - Step 11 Client Build Log: `./logs/step-11-client-build-notes.txt`
+
+## Troubleshooting
+
+Issues encountered during the lab are documented here:
+
+- [Network Connectivity Issue (DC01 and CLIENT01)](./troubleshooting/network-connectivity-issue.md)
 
 ---
 
