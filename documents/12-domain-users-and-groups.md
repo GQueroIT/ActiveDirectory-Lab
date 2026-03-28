@@ -1,158 +1,103 @@
-\## Step 12 - Domain Users and Security Groups Configuration
+# Step 12 - Domain Users and Security Groups Configuration
 
+---
 
-
-\### Objective
-
-
+## Objective
 
 In this step, I configured a structured Active Directory environment by creating domain security groups and standard user accounts. I then assigned users to the appropriate groups to simulate a real-world organizational structure.
 
+---
 
+## Technologies Used
 
-\### Technologies Used
+- Windows Server 2022
+- Active Directory Domain Services (AD DS)
+- Active Directory Users and Computers (ADUC)
+- PowerShell
 
+---
 
+## Key Concepts
 
-\- Windows Server 2022
+- Organizational Units (OUs)
+- Security Groups
+- Group Membership
+- Role-Based Access Control (RBAC)
 
-\- Active Directory Domain Services (AD DS)
+---
 
-\- Active Directory Users and Computers (ADUC)
-
-\- PowerShell
-
-
-
-\### Key Concepts
-
-
-
-\- Organizational Units (OUs)
-
-\- Security Groups
-
-\- Group Membership
-
-\- Role-Based Access Control (RBAC)
-
-
-
-\### Group Creation
-
-
+## Group Creation
 
 I created the following security groups:
 
+### IT OU
+- IT_Admins
+- IT_Staff
 
-
-\*\*IT OU:\*\*
-
-\- IT\_Admins
-
-\- IT\_Staff
-
-
-
-\*\*HR OU:\*\*
-
-\- HR\_Users
-
-
+### HR OU
+- HR_Users
 
 All groups were configured as:
 
-\- Group Scope: Global
+- Group Scope: Global  
+- Group Type: Security  
 
-\- Group Type: Security
+---
 
-
-
-\### User Account Creation
-
-
+## User Account Creation
 
 I created the following domain users:
 
+### IT Department
+- jsantiago (Jose Santiago)
+- mrivera (Maria Rivera)
 
-
-\*\*IT Department:\*\*
-
-\- jsantiago (Jose Santiago)
-
-\- mrivera (Maria Rivera)
-
-
-
-\*\*HR Department:\*\*
-
-\- arodriguez (Ana Rodriguez)
-
-
+### HR Department
+- arodriguez (Ana Rodriguez)
 
 Each account was configured with:
 
-\- A standard password
+- Standard password
+- Password set to never expire (lab environment)
+- No forced password change on first login
 
-\- Password set to never expire (lab environment)
+---
 
-\- No forced password change on first login
+## Group Membership Assignment
 
+Users were assigned to their respective groups:
 
+- jsantiago → IT_Staff  
+- mrivera → IT_Staff  
+- arodriguez → HR_Users  
 
-\### Group Membership Assignment
+---
 
+## Verification
 
+Group membership was verified using:
 
-I assigned users to their respective groups:
+### Active Directory Users and Computers
+- Member Of tab
+- Members tab
 
-
-
-\- jsantiago -> IT\_Staff
-
-\- mrivera -> IT\_Staff
-
-\- arodriguez -> HR\_Users
-
-
-
-\### Verification
-
-
-
-I verified group membership using:
-
-
-
-\- Active Directory Users and Computers (Member Of / Members tabs)
-
-\- PowerShell
-
-
+### PowerShell
 
 ```powershell
+Get-ADGroupMember "IT_Staff"
+Get-ADGroupMember "HR_Users"
+```
 
-Get-ADGroupMember "IT\_Staff"
+---
 
-Get-ADGroupMember "HR\_Users"
+## Screenshots
 
+All screenshots for this step are located in:
 
+`/screenshots/step-12/`
 
-\## Screenshots
+---
 
-
-
-All screenshots are located in:
-
-
-
-/screenshots/step-12/
-
-
-
-\## Notes
-
-
+## Notes
 
 This step establishes a proper Active Directory structure that will be used later for permissions, Group Policy, and domain login testing.
-
