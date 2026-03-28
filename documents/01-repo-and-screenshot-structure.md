@@ -1,228 +1,113 @@
-\# Step 01 - Repository and Screenshot Structure Setup
-
-
+# Step 01 - Repository and Screenshot Structure Setup
 
 ---
 
-
-
-\## Objective
-
-
+## Objective
 
 In this step, I set up the foundation for the entire Active Directory lab by creating a structured GitHub repository. The goal was to organize all configurations, documentation, and screenshots in a way that reflects a real-world IT workflow.
 
+---
 
+## Technologies Used
+
+- Git  
+- GitHub  
+- PowerShell  
+- Visual Studio Code  
 
 ---
 
+## Key Concepts
 
-
-\## Technologies Used
-
-
-
-\- Git  
-
-\- GitHub  
-
-\- PowerShell  
-
-\- Visual Studio Code  
-
-
+- Version Control  
+- Repository Structure  
+- Documentation Workflow  
+- Evidence-Based Lab Tracking  
 
 ---
 
+## Configuration / Implementation
 
-
-\## Key Concepts
-
-
-
-\- Version Control  
-
-\- Repository Structure  
-
-\- Documentation Workflow  
-
-\- Evidence-Based Lab Tracking  
-
-
-
----
-
-
-
-\## Configuration / Implementation
-
-
-
-\### 1. Created GitHub Repository
-
-
+### 1. Created GitHub Repository
 
 I created a new repository named:
 
-
-
 ActiveDirectory-Lab
 
-
-
-This repository will be used to document the entire lab from start to finish.
-
-
+This repository serves as the central location for all lab configurations, documentation, and supporting evidence.
 
 ---
 
+### 2. Established Folder Structure
 
+I created a structured directory layout to separate each component of the lab:
 
-\### 2. Established Folder Structure
-
-
-
-I created a structured directory layout to separate different parts of the lab:
-
-
-
-\- configs/ → configuration files  
-
-\- documents/ → step-by-step documentation  
-
-\- logs/ → command outputs and logs  
-
-\- screenshots/ → visual evidence of each step  
-
-\- troubleshooting/ → issues and resolutions  
-
-\- scripts/ → automation scripts  
-
-
+- configs/ → configuration files  
+- documents/ → step-by-step documentation  
+- logs/ → command outputs and logs  
+- screenshots/ → visual evidence for each step  
+- troubleshooting/ → issues and resolutions  
+- scripts/ → automation scripts  
 
 ---
 
+### 3. Organized Screenshot Structure
 
-
-\### 3. Organized Screenshot Structure
-
-
-
-Inside the screenshots directory, I created folders for each step:
-
-
+Inside the screenshots directory, I created step-based folders:
 
 screenshots/step-01  
-
 screenshots/step-02  
-
 screenshots/step-03  
-
 ...
 
-
-
-This allows each step to have its own evidence and keeps everything organized.
-
-
+This ensures that each step has clearly organized evidence.
 
 ---
 
-
-
-\### 4. Prepared Local Repository
-
-
+### 4. Prepared Local Repository
 
 I cloned the repository locally and began working within it using PowerShell and Visual Studio Code.
 
-
-
-This allowed me to:
-
-
-
-\- track changes  
-
-\- commit updates  
-
-\- push progress to GitHub  
-
-
+This allowed me to track changes, commit updates, and push progress to GitHub consistently.
 
 ---
 
+### 5. Established Documentation Workflow
 
+Each step in this lab will follow a consistent structure:
 
-\### 5. Established Documentation Workflow
+- Objective  
+- Technologies Used  
+- Key Concepts  
+- Configuration / Implementation  
+- Validation / Verification  
+- Evidence  
+- Key Takeaways  
 
-
-
-Each step in the lab will follow a consistent format:
-
-
-
-\- clear objective  
-
-\- detailed configuration steps  
-
-\- validation  
-
-\- screenshots for evidence  
-
-
-
-This ensures the entire lab is easy to follow and reflects real-world documentation practices.
-
-
+This keeps the documentation clean, consistent, and aligned with real-world practices.
 
 ---
 
+## Validation / Verification
 
-
-\## Validation / Verification
-
-
-
-\- Verified repository structure in GitHub  
-
-\- Confirmed all folders were created correctly  
-
-\- Ensured local and remote repositories are synchronized  
-
-
+- Verified repository structure in GitHub  
+- Confirmed all folders were created correctly  
+- Ensured local and remote repositories were synchronized  
 
 ---
 
-
-
-\## Evidence
-
-
+## Evidence
 
 Screenshots for this step are located in:
 
-
-
 `screenshots/step-01/`
 
-
-
 ---
 
+## Key Takeaways
 
-
-\## Key Takeaways
-
-
-
-\- A well-structured repository makes complex projects easier to manage  
-
-\- Documentation is just as important as configuration in IT environments  
-
-\- Organizing evidence from the beginning prevents issues later in the lab  
-
-
+- A structured repository makes complex projects easier to manage  
+- Documentation is just as important as configuration in IT environments  
+- Organizing evidence early prevents confusion later in the lab  
 
 ---
-
