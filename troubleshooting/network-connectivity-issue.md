@@ -139,16 +139,16 @@ This restored ping functionality in a controlled and secure way.
 
 Screenshots for this issue are located in:
 
-`screenshots/troubleshooting/`
+`screenshots/troubleshooting/connectivity-issue/`
 
 Included evidence:
 
-- CLIENT01 IP Config Correct
-- DC IP Config Wrong
-- DC IP Config Corrected
-- DC Ping Fail
-- Communication After Firewall Disabled
-- ICMP Rule Added Successful
+- CLIENT01 IP Config Correct.png
+- DC IP Config Wrong.png
+- DC IP Config Corrected.png
+- DC Ping Fail.png
+- Communication After Firewall Disabled.png
+- ICMP Rule Added Successful.png
 
 ---
 
