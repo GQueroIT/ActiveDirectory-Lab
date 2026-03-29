@@ -1,268 +1,143 @@
-\# Step 06 - Install Active Directory Domain Services (AD DS)
-
-
+# Step 06 - Install Active Directory Domain Services (AD DS)
 
 ---
 
+## Objective
 
-
-\## Objective
-
-
-
-In this step, I installed the Active Directory Domain Services (AD DS) role on DC01.  
+In this step, I installed the Active Directory Domain Services (AD DS) role on DC01.
 
 This prepares the server to be promoted to a Domain Controller in the next step.
 
-
-
 ---
 
+## Technologies Used
 
+Windows Server 2022
 
-\## Technologies Used
-
-
-
-\- Windows Server 2022
-
-\- Server Manager
-
-\- Active Directory Domain Services (AD DS)
-
-
-
----
-
-
-
-\## Key Concepts
-
-
-
-\- Active Directory Domain Services (AD DS)
-
-\- Server Roles and Features
-
-\- Domain Controller Preparation
-
-\- Forest and Domain Structure
-
-
-
----
-
-
-
-\## Configuration / Implementation
-
-
-
-\### 1. Open Server Manager
-
-
-
-Launched Server Manager from the taskbar.
-
-
-
-This is the central interface used to manage roles and features.
-
-
-
----
-
-
-
-\### 2. Add Roles and Features
-
-
-
-Navigated to:
-
-
-
-Manage → Add Roles and Features
-
-
-
-Started the Add Roles and Features Wizard.
-
-
-
----
-
-
-
-\### 3. Installation Type
-
-
-
-Selected:
-
-
-
-Role-based or feature-based installation
-
-
-
-This allows manual selection of server roles.
-
-
-
----
-
-
-
-\### 4. Server Selection
-
-
-
-Selected the local server:
-
-
-
-DC01
-
-
-
-Confirmed the correct server was targeted for installation.
-
-
-
----
-
-
-
-\### 5. Select Server Roles
-
-
-
-Checked:
-
-
+Server Manager
 
 Active Directory Domain Services (AD DS)
 
+---
 
+## Key Concepts
 
-When prompted, selected:
+Active Directory Domain Services (AD DS)
 
+Server Roles and Features
 
+Domain Controller Preparation
 
-Add Features
-
-
+Forest and Domain Structure
 
 ---
 
+## Configuration / Implementation
 
+### 1. Open Server Manager
 
-\### 6. Features Section
+Launched Server Manager from the taskbar.
 
+This is the central interface used to manage roles and features.
 
+---
+
+### 2. Add Roles and Features
+
+Navigated to:
+
+Manage → Add Roles and Features
+
+Started the Add Roles and Features Wizard.
+
+---
+
+### 3. Select Installation Type
+
+Selected:
+
+Role-based or feature-based installation
+
+This allows manual selection of server roles.
+
+---
+
+### 4. Select Server
+
+Chose the local server:
+
+DC01
+
+Confirmed the correct target for installation.
+
+---
+
+### 5. Select Server Role
+
+Selected:
+
+Active Directory Domain Services (AD DS)
+
+When prompted, added required features.
+
+---
+
+### 6. Features Section
 
 Left default features selected.
 
-
-
-No additional features were required for this step.
-
-
+No additional features were required.
 
 ---
 
+### 7. Review AD DS Information
 
+Reviewed the AD DS informational screen.
 
-\### 7. AD DS Information
-
-
-
-Reviewed the AD DS information screen.
-
-
-
-Confirmed understanding that this role enables domain services.
-
-
+Confirmed understanding of domain services functionality.
 
 ---
 
+### 8. Install Role
 
-
-\### 8. Confirmation
-
-
-
-Clicked Install to begin installation.
-
-
+Clicked Install to begin the process.
 
 ---
 
-
-
-\### 9. Installation Complete
-
-
+### 9. Installation Complete
 
 Waited for installation to complete successfully.
 
-
-
-Did NOT restart the server yet.
-
-
+Did not restart the server at this stage.
 
 ---
 
+## Validation / Verification
 
+Confirmed AD DS role installed successfully
 
-\## Validation / Verification
+Verified no installation errors
 
-
-
-\- Confirmed AD DS role installed successfully
-
-\- Verified no installation errors
-
-\- Confirmed post-installation notification appeared
-
-
+Confirmed post-installation notification appeared
 
 ---
 
-
-
-\## Evidence
-
-
+## Evidence
 
 Screenshots for this step:
 
-
-
 screenshots/step-06/
 
-
-
 ---
 
+## Key Takeaways
 
+AD DS must be installed before promoting a Domain Controller
 
-\## Key Takeaways
+This step installs the role but does not create a domain
 
+The server is not a Domain Controller until promotion
 
-
-\- AD DS must be installed before promoting a Domain Controller
-
-\- This step only installs the role — no domain exists yet
-
-\- The server is not a Domain Controller until promotion
-
-\- Server Manager is used to manage roles and infrastructure
-
-
+Server Manager is used to manage roles and infrastructure
 
 ---
-
