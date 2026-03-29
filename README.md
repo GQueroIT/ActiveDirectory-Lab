@@ -20,77 +20,85 @@ My goal is to build a strong foundation in identity and access management, domai
 
 The following sections highlight the core components of this lab:
 
-- [Full Lab Documentation](#documentation)
-- [Configuration Files](#configuration)
-- [Evidence and Logs](#evidence)
+- [Full Lab Documentation](./documents/)
+- [Configuration Files](./configs/)
+- [Evidence and Logs](./screenshots/)
 - [Troubleshooting](./troubleshooting/README.md)
 
 ---
 
 ## Documentation
 
-The lab is broken down step-by-step to simulate a real-world deployment process:
+The lab is broken down by step to simulate a real deployment process:
 
 - [Step 00 - Lab Overview](./documents/00-lab-overview.md)
-- [Step 01 - Repo and Screenshot Structure](./documents/01-repo-and-screenshot-structure.md)
-- [Step 02 - Git and GitHub Setup](./documents/02-git-and-github-setup.md)
-- [Step 03 - VirtualBox and Lab Prep](./documents/03-virtualbox-and-lab-prep.md)
-- [Step 04 - Windows Server VM Creation](./documents/04-windows-server-vm-creation.md)
-- [Step 05 - Network Configuration and Static IP](./documents/05-network-configuration-and-static-ip.md)
-- [Step 06 - AD DS and Domain Promotion](./documents/06-adds-and-domain-promotion.md)
-- [Step 07 - Post Promotion Validation](./documents/07-post-promotion-validation.md)
-- [Step 08 - Admin Account and OU Creation](./documents/08-admin-account-and-ou-creation.md)
-- [Step 09 - Core AD Verification](./documents/09-core-ad-verification.md)
-- [Step 10 - Final AD Validation](./documents/10-final-ad-validation.md)
-- [Step 11 - Windows Client Installation](./documents/11-windows-client-installation.md)
-- [Step 12 - Domain Users and Security Groups](./documents/12-domain-users-and-groups.md)
+- [Step 01 - Repository and Screenshot Structure Setup](./documents/01-repo-and-screenshot-structure.md)
+- [Step 02 - Git and GitHub Repository Setup](./documents/02-git-and-github-setup.md)
+- [Step 03 - VirtualBox Setup and Lab Preparation](./documents/03-virtualbox-and-lab-prep.md)
+- [Step 04 - Windows Server Virtual Machine Creation](./documents/04-windows-server-vm-creation.md)
+- [Step 05 - Network Configuration and IP Setup](./documents/05-network-configuration-and-ip-setup.md)
+- [Step 06 - Install Active Directory Domain Services (AD DS)](./documents/06-adds-and-domain-promotion.md)
+- [Step 07 - Domain Controller Promotion and Domain Creation](./documents/07-post-promotion-validation.md)
+- [Step 08 - Administrative Account and OU Creation](./documents/08-admin-account-and-ou-creation.md)
+- [Step 09 - Core Active Directory Verification](./documents/09-core-ad-verification.md)
+- [Step 10 - Final Active Directory Validation](./documents/10-final-ad-validation.md)
+- [Step 11 - Windows Client Installation and Preparation](./documents/11-windows-client-installation-and-preparation.md)
+- [Step 12 - Domain Users and Security Groups Configuration](./documents/12-domain-users-and-groups.md)
 - [Step 13 - Domain Join and Client Validation](./documents/13-domain-join-and-client-validation.md)
+- [Evidence Index](./documents/99-evidence-index.md)
 
 ---
 
 ## Configuration
 
-These files define the environment setup and structure:
+Core planning and reference files used throughout the build:
 
-- [IP Addressing Plan](./configs/ip-addressing-plan.md)
-- [Hostname Plan](./configs/hostname-plan.md)
-- [OU Structure](./configs/ou-structure.md)
+- [IP Addressing Plan](./configs/00-ip-addressing-plan.md)
+- [Hostname Plan](./configs/01-hostname-plan.md)
+- [OU Structure](./configs/02-ou-structure.md)
 
 ---
 
-## Evidence
+## Evidence and Logs
 
-All work is supported with screenshots and logs:
+This lab includes screenshots and supporting logs for validation:
 
-- Screenshots: `./screenshots/`
-- Step 10 Validation Log: `./logs/step-10-ad-validation.txt`
-- Step 11 Client Build Log: `./logs/step-11-client-build-notes.txt`
+- [Screenshots](./screenshots/)
+- [Logs](./logs/)
+
+---
 
 ## Troubleshooting
 
 Issues encountered during the lab are documented here:
 
-- [Network Connectivity Issue (DC01 and CLIENT01)](./troubleshooting/network-connectivity-issue.md)
+- [Troubleshooting Index](./troubleshooting/README.md)
+- [Network Connectivity Issue](./troubleshooting/network-connectivity-issue.md)
 
 ---
 
-## Automation
+## What This Lab Demonstrates
 
-Automation used to streamline documentation:
+This lab demonstrates hands-on work in:
 
-- PowerShell Screenshot Sync Script: `./scripts/sync-screenshots.ps1`
+Active Directory deployment
+
+Domain Controller configuration
+
+DNS setup and validation
+
+OU design and directory organization
+
+Administrative account creation
+
+Windows client preparation and domain integration
+
+Troubleshooting and validation
+
+VirtualBox-based enterprise lab simulation
 
 ---
 
-## Key Takeaways (So Far)
+## Notes
 
-- Domain Controllers must use static IP addressing for stability  
-- Active Directory relies heavily on DNS for functionality  
-- OU structure is critical for scalable administration  
-- Proper validation ensures a stable domain before client integration  
-
----
-
-## Author
-
-Gabriel Quero
+All major steps in this lab are documented with screenshots and validation to show a full working build and a clear progression from setup through domain integration.
