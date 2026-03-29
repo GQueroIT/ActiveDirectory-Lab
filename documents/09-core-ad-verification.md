@@ -1,278 +1,137 @@
-\# Step 09 - Core Active Directory Verification
-
-
+# Step 09 - Core Active Directory Verification
 
 ---
 
+## Objective
 
+In this step, I verified that the core Active Directory environment is working properly after completing the domain setup.
 
-\## Objective
-
-
-
-In this step, I verified that all core Active Directory components are functioning correctly after domain setup and initial configuration.
-
-
-
-This ensures the environment is stable before proceeding to further configurations.
-
-
+The goal here was to make sure everything is stable before moving forward.
 
 ---
 
-
-
-\## Technologies Used
-
-
+## Technologies Used
 
 Windows Server 2022
 
-
-
 Active Directory Users and Computers (ADUC)
-
-
 
 Command Prompt
 
-
-
 DNS Manager
-
-
 
 ---
 
-
-
-\## Key Concepts
-
-
+## Key Concepts
 
 Active Directory Validation
 
-
-
 Domain Services Verification
-
-
 
 DNS Resolution
 
-
-
 Authentication Testing
-
-
 
 Directory Integrity
 
-
-
 ---
 
+## Configuration / Implementation
 
+### 1. Verify Domain Controller Status
 
-\## Configuration / Implementation
-
-
-
-\### 1. Verify Domain Controller Status
-
-
-
-Confirmed DC01 is operating as a Domain Controller.
-
-
+Confirmed that DC01 is running as a Domain Controller.
 
 Verified domain:
 
-
-
 relentixtest.local
-
-
 
 ---
 
-
-
-\### 2. Verify Organizational Units
-
-
+### 2. Verify Organizational Units
 
 Opened Active Directory Users and Computers.
 
-
-
-Confirmed all OUs exist:
-
-
+Confirmed all OUs are present:
 
 IT
 
-
-
 HR
-
-
 
 Workstations
 
-
-
 Servers
-
-
 
 Service Accounts
 
-
-
 ---
 
+### 3. Verify User Accounts
 
-
-\### 3. Verify User Accounts
-
-
-
-Confirmed administrative account exists:
-
-
+Confirmed the administrative account exists:
 
 gquero
 
-
-
-Verified correct OU placement
-
-
+Verified it is placed in the correct OU.
 
 ---
 
-
-
-\### 4. Verify Group Membership
-
-
+### 4. Verify Group Membership
 
 Opened Command Prompt and ran:
 
-
-
 whoami /groups
 
-
-
-Confirmed Domain Admins membership is applied
-
-
+Confirmed the account is part of Domain Admins.
 
 ---
 
-
-
-\### 5. Verify DNS Functionality
-
-
+### 5. Verify DNS Functionality
 
 Opened DNS Manager.
 
-
-
-Confirmed forward lookup zone exists:
-
-
+Confirmed the forward lookup zone exists:
 
 relentixtest.local
 
-
-
-Verified proper DNS records are present
-
-
+Verified the required DNS records are present.
 
 ---
 
-
-
-\### 6. Verify Authentication
-
-
+### 6. Verify Authentication
 
 Logged into the system using domain credentials.
 
-
-
-Confirmed successful authentication against the domain
-
-
+Confirmed successful authentication against the domain.
 
 ---
 
+## Validation / Verification
 
+Confirmed the Domain Controller is working correctly.
 
-\## Validation / Verification
+Verified OU structure and account placement.
 
+Validated DNS functionality.
 
-
-Confirmed Domain Controller is functioning properly
-
-
-
-Verified OU structure and user organization
-
-
-
-Validated DNS resolution and domain services
-
-
-
-Confirmed successful domain authentication
-
-
+Confirmed successful domain authentication.
 
 ---
 
-
-
-\## Evidence
-
-
+## Evidence
 
 Screenshots for this step:
 
-
-
 screenshots/step-09/
 
-
-
 ---
 
+## Key Takeaways
 
+This step confirmed that the Active Directory environment is fully operational.
 
-\## Key Takeaways
+DNS plays a critical role in domain communication and authentication.
 
-
-
-Verification ensures all Active Directory components are working as expected
-
-
-
-DNS is critical for domain functionality and authentication
-
-
-
-Proper validation prevents issues in later configurations
-
-
-
-This step confirms a stable and functional Active Directory environment
-
-
+Verifying everything at this stage helps prevent issues later in the lab.
 
 ---
-
