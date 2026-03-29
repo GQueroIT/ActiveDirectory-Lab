@@ -1,220 +1,125 @@
-\# Step 03 - VirtualBox Setup and Lab Preparation
-
-
+# Step 03 - VirtualBox Setup and Lab Preparation
 
 ---
 
-
-
-\## Objective
-
-
+## Objective
 
 In this step, I prepared the lab environment by installing and configuring VirtualBox. The goal was to create a stable virtualization environment that would support running Windows Server and client machines for the Active Directory lab.
 
+---
 
+## Technologies Used
+
+Oracle VirtualBox
+
+Windows 11 (Host Machine)
+
+ISO Images (Windows Server / Windows Client)
 
 ---
 
+## Key Concepts
 
+Virtualization
 
-\## Technologies Used
+Hypervisor Configuration
 
+Resource Allocation
 
+Network Adapter Configuration
 
-\- Oracle VirtualBox  
-
-\- Windows 11 (Host Machine)  
-
-\- ISO Images (Windows Server / Windows Client)  
-
-
+Lab Environment Design
 
 ---
 
+## Configuration / Implementation
 
-
-\## Key Concepts
-
-
-
-\- Virtualization  
-
-\- Hypervisor Configuration  
-
-\- Resource Allocation  
-
-\- Network Adapter Configuration  
-
-\- Lab Environment Design  
-
-
-
----
-
-
-
-\## Configuration / Implementation
-
-
-
-\### 1. Installed VirtualBox
-
-
+### 1. Installed VirtualBox
 
 I installed Oracle VirtualBox on my host machine to serve as the hypervisor for running virtual machines.
 
-
-
 This allows multiple operating systems to run simultaneously in an isolated environment.
-
-
 
 ---
 
-
-
-\### 2. Downloaded Required ISO Files
-
-
+### 2. Downloaded Required ISO Files
 
 I obtained the necessary ISO files for:
 
+Windows Server
 
+Windows Client
 
-\- Windows Server (Domain Controller)  
-
-\- Windows Client (CLIENT01)  
-
-
-
-These will be used to install the operating systems inside the virtual machines.
-
-
+These ISO files will be used to install the operating systems inside the virtual machines.
 
 ---
 
+### 3. Created Initial Virtual Machine Plan
 
+I planned the lab environment to include:
 
-\### 3. Created Initial Virtual Machine Plan
+DC01 as the Domain Controller
 
+CLIENT01 as the client machine
 
-
-Planned the lab environment to include:
-
-
-
-\- 1 Domain Controller (DC01)  
-
-\- 1 Client Machine (CLIENT01)  
-
-
-
-This setup simulates a basic enterprise network.
-
-
+This setup simulates a small enterprise network.
 
 ---
 
+### 4. Configured VirtualBox Networking
 
+I prepared the network design using:
 
-\### 4. Configured VirtualBox Networking
+NAT for internet access
 
+Host-Only Adapter for internal lab communication
 
-
-Prepared the networking setup using:
-
-
-
-\- NAT Adapter → for internet access  
-
-\- Host-Only Adapter → for internal lab communication  
-
-
-
-This design allows:
-
-
-
-\- isolated communication between lab machines  
-
-\- controlled access to external networks  
-
-
+This design allows the virtual machines to communicate with each other while keeping the internal lab network separated from the outside network.
 
 ---
 
+### 5. Allocated System Resources
 
+I configured the virtual machine settings to support stable performance, including:
 
-\### 5. Allocated System Resources
+RAM allocation
 
+CPU allocation
 
+Virtual disk storage
 
-Configured virtual machine settings to ensure stability:
-
-
-
-\- RAM allocation  
-
-\- CPU allocation  
-
-\- Storage configuration  
-
-
-
-This ensures both systems can run efficiently without impacting the host machine.
-
-
+This helps ensure the lab runs smoothly without unnecessary performance issues.
 
 ---
 
+## Validation / Verification
 
+Verified VirtualBox installation completed successfully
 
-\## Validation / Verification
+Confirmed ISO files were available and ready to mount
 
+Verified planned VM network design was in place
 
-
-\- Verified VirtualBox installation  
-
-\- Confirmed ISO files were accessible  
-
-\- Validated network adapter configuration  
-
-\- Ensured VM settings were properly configured  
-
-
+Confirmed lab environment was prepared for server deployment
 
 ---
 
+## Evidence
 
-
-\## Evidence
-
-
-
-Screenshots for this step are located in:
-
-
+Screenshots for this step:
 
 `screenshots/step-03/`
 
-
-
 ---
 
+## Key Takeaways
 
+Virtualization is essential for building safe and flexible lab environments
 
-\## Key Takeaways
+Proper planning makes later configuration steps easier
 
+Network design must be thought through before server deployment
 
-
-\- Virtualization is essential for building safe and flexible lab environments  
-
-\- Proper network design is critical for simulating real-world infrastructure  
-
-\- Planning the environment before deployment prevents configuration issues later  
-
-
+A stable lab foundation prevents avoidable issues later in the build
 
 ---
-
